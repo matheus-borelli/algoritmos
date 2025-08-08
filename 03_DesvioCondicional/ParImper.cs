@@ -1,7 +1,7 @@
 using System;
 class ParImper
 {
-	static void main
+	static void Main
 	{
 		int numero;
 		
