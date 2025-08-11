@@ -4,19 +4,27 @@ class Program
 {
     static void Main()
     {
-        Console.Write("Digite um número de 1 a 10: ");
-        int numero = int.Parse(Console.ReadLine());
+        int multiplicando = 0, produto;
+        bool digitacaoValida = false;
 
-        if (numero >= 1 || numero <= 10)
+        // ! negação: inverte o valor booleano
+        // !false = true
+        // !true = false
+        //while ( !digitacaoValida)
+        while (!digitacaoValida)
         {
-            for (int i = 1; i <= 10; i++)
-            {
-                Console.WriteLine($"{numero} x {i} = {numero * i}");
-            }
+            //Console.WriteLine("TABUADA DO {0}", multiplicando);
+            //Interpolação do String $
+            Console.WriteLine("Digite um número inteiro");
+            digitacaoValida = int.TryParse(Console.ReadLine(), out multiplicando);
         }
-        else
+         //Console.WriteLine("TABUADA DO {0}", multiplicando);
+        //Interpolação de String $
+        Console.WriteLine($"TABUADA DO {multiplicando}");
+        for (int multiplicador = 1; multiplicador <= 10; multiplicador++)
         {
-            Console.WriteLine("Número inválido!");
+            produto = multiplicando * multiplicador;
+            Console.WriteLine($"{multiplicando} x {multiplicador} = {produto}");
         }
     }
 }
